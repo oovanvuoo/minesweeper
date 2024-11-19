@@ -1,0 +1,63 @@
+current directory: /Users/vanvu/Documents/Code/minesweeper/vendor/bundle/ruby/2.7.0/gems/mysql2-0.5.6/ext/mysql2
+/Users/vanvu/.rvm/rubies/ruby-2.7.8/bin/ruby -I /Users/vanvu/.rvm/rubies/ruby-2.7.8/lib/ruby/2.7.0 -r ./siteconf20241119-87637-1rdndh0.rb extconf.rb --with-mysql-dir\=/opt/homebrew/opt/mysql-client@8.0
+checking for rb_absint_size()... yes
+checking for rb_absint_singlebit_p()... yes
+checking for rb_gc_mark_movable()... yes
+checking for rb_wait_for_single_fd()... yes
+checking for rb_enc_interned_str() in ruby.h... no
+-----
+Using --with-openssl-dir=/opt/homebrew/opt/openssl@1.1
+-----
+-----
+Using --with-mysql-dir=/opt/homebrew/opt/mysql-client@8.0
+-----
+checking for -lmysqlclient... yes
+checking for mysql.h... no
+checking for mysql/mysql.h... yes
+checking for mysql/errmsg.h... yes
+checking for SSL_MODE_DISABLED in mysql/mysql.h... yes
+checking for SSL_MODE_PREFERRED in mysql/mysql.h... yes
+checking for SSL_MODE_REQUIRED in mysql/mysql.h... yes
+checking for SSL_MODE_VERIFY_CA in mysql/mysql.h... yes
+checking for SSL_MODE_VERIFY_IDENTITY in mysql/mysql.h... yes
+checking for MYSQL.net.vio in mysql/mysql.h... yes
+checking for MYSQL.net.pvio in mysql/mysql.h... no
+checking for MYSQL_DEFAULT_AUTH in mysql/mysql.h... yes
+checking for MYSQL_ENABLE_CLEARTEXT_PLUGIN in mysql/mysql.h... yes
+checking for SERVER_QUERY_NO_GOOD_INDEX_USED in mysql/mysql.h... yes
+checking for SERVER_QUERY_NO_INDEX_USED in mysql/mysql.h... yes
+checking for SERVER_QUERY_WAS_SLOW in mysql/mysql.h... yes
+checking for MYSQL_OPTION_MULTI_STATEMENTS_ON in mysql/mysql.h... yes
+checking for MYSQL_OPTION_MULTI_STATEMENTS_OFF in mysql/mysql.h... yes
+checking for my_bool in mysql/mysql.h... no
+checking for mysql_ssl_set() in mysql/mysql.h... yes
+-----
+Setting rpath to /opt/homebrew/opt/mysql-client@8.0/lib
+-----
+creating Makefile
+
+current directory: /Users/vanvu/Documents/Code/minesweeper/vendor/bundle/ruby/2.7.0/gems/mysql2-0.5.6/ext/mysql2
+make "DESTDIR=" clean
+
+current directory: /Users/vanvu/Documents/Code/minesweeper/vendor/bundle/ruby/2.7.0/gems/mysql2-0.5.6/ext/mysql2
+make "DESTDIR="
+compiling client.c
+In file included from client.c:15:
+./mysql_enc_name_to_ruby.h:43:1: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+   43 | mysql2_mysql_enc_name_to_rb_hash (str, len)
+      | ^
+./mysql_enc_name_to_ruby.h:86:1: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+   86 | mysql2_mysql_enc_name_to_rb (str, len)
+      | ^
+2 warnings generated.
+compiling infile.c
+compiling mysql2_ext.c
+compiling result.c
+compiling statement.c
+linking shared-object mysql2/mysql2.bundle
+ld: warning: -multiply_defined is obsolete
+ld: warning: ignoring duplicate libraries: '-lruby.2.7'
+
+current directory: /Users/vanvu/Documents/Code/minesweeper/vendor/bundle/ruby/2.7.0/gems/mysql2-0.5.6/ext/mysql2
+make "DESTDIR=" install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 mysql2.bundle ./.gem.20241119-87637-1xcqlpw/mysql2

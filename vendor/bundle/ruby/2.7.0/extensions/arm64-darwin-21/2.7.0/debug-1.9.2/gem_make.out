@@ -1,0 +1,18 @@
+current directory: /Users/vanvu/Documents/Code/minesweeper/vendor/bundle/ruby/2.7.0/gems/debug-1.9.2/ext/debug
+/Users/vanvu/.rvm/rubies/ruby-2.7.8/bin/ruby -I /Users/vanvu/.rvm/rubies/ruby-2.7.8/lib/ruby/2.7.0 -r ./siteconf20241119-87637-4hw0qs.rb extconf.rb
+creating Makefile
+
+current directory: /Users/vanvu/Documents/Code/minesweeper/vendor/bundle/ruby/2.7.0/gems/debug-1.9.2/ext/debug
+make "DESTDIR=" clean
+
+current directory: /Users/vanvu/Documents/Code/minesweeper/vendor/bundle/ruby/2.7.0/gems/debug-1.9.2/ext/debug
+make "DESTDIR="
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+ld: warning: -multiply_defined is obsolete
+ld: warning: ignoring duplicate libraries: '-lruby.2.7'
+
+current directory: /Users/vanvu/Documents/Code/minesweeper/vendor/bundle/ruby/2.7.0/gems/debug-1.9.2/ext/debug
+make "DESTDIR=" install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 debug.bundle ./.gem.20241119-87637-q2v883/debug

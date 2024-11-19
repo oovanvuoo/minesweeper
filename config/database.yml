@@ -13,20 +13,20 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  host: localhost
+  username: 'freedb_minesapp@8868'
+  password: 'WZ5@GrSyh$3Jj8m'
+  host: sql.freedb.tech
 
 development:
   <<: *default
-  database: minesweeper_development
+  database: freedb_minesapp
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: minesweeper_test
+  database: freedb_minesapp
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: minesweeper_production
+  database: freedb_minesapp
   username: minesweeper
   password: <%= ENV["MINESWEEPER_DATABASE_PASSWORD"] %>
