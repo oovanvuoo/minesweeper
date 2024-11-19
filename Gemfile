@@ -63,4 +63,4 @@ end
 gem "mysql2", "~> 0.5.6"
 
 gem "timeout", "~> 0.4.2"
-gem "paranoid", "~> 0.0.7"
+gem "paranoia", "~> 3.0"

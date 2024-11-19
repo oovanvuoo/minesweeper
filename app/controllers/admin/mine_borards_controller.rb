@@ -1,0 +1,5 @@
+class MineBoardsController < ApplicationController
+
+  
+
+end
