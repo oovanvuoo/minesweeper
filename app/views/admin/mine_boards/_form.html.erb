@@ -1,0 +1,33 @@
+<div class="admin main content">
+  <div class="card box-solid">
+    <div class="card-body table-responsive p-5">
+      <%= form_for [:admin, @mine_board] do |f| %>
+      <div class="row ">
+        <div class="col-md-4">
+          <%= f.label "Input your Email"%>
+          <%= f.text_field :email, value: f.object.email , class: "form-control"%>
+        </div>
+
+        <div class="col-md-4">
+          <%= f.label "Input Width"%>
+          <%= f.text_field :width, value: f.object.width , class: "form-control"%>
+        </div>
+
+        <div class="col-md-4">
+          <%= f.label "Input Height"%>
+          <%= f.text_field :height, value: f.object.height , class: "form-control"%>
+        </div>
+
+        <div class="col-md-4">
+          <%= f.label "Input mine number"%>
+          <%= f.text_field :mine_number, value: f.object.mine_number , class: "form-control"%>
+        </div>
+
+        <div class="col-md-12 pt-3">
+          <%= f.submit "Save", class: "btn btn-success btn-md" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

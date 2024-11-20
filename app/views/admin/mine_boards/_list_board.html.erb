@@ -1,0 +1,35 @@
+<div class="box">
+  <div class="card box-solid">
+    <div class="card-body table-responsive p-0">
+      <table class="table m-0 table-hover">
+        <thead>
+          <tr>
+            <th style="width: 10%;">ID</th>
+            <th style="width: 25%;">Email</th>
+            <th style="width: 15%;">Board size</th>
+            <th style="width: 15%;">Number of mines</th>
+            <th style="width: 25%;">Created at</th>
+            <th style="width: 10%;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% mine_boards.each do |mine_board| %>
+          <tr>
+            <td><%= mine_board.id %></td>
+            <td><%= link_to mine_board.email, admin_mine_board_path(mine_board) %></td>
+            <td><%= mine_board.board_size %></td>
+            <td><%= mine_board.mine_number %></td>
+            <td><%= mine_board.created_at.strftime("%d-%m%Y %H:%M") %></td>
+            <td class="text-right">
+              <%= link_to "Delete", admin_mine_board_path(mine_board), 
+                  method: :delete, 
+                  data: { confirm: "Are you sure you want to delete this board?" }, 
+                  class: "btn btn-danger" %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
