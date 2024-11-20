@@ -5,20 +5,23 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 
+ruby -v
+```ruby 2.7.8p225```
 
 * System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+bundle install
 
 * Deployment instructions
+sh dev.deploy.sh
 
-* ...
+* Start service
+rails s
+
+# Usermanual
+
+* Open menu page to begin
+```http://localhost:3000/admin/menu```
+
+Generate: Input email and board dimension to can be Generate new board.
+Show: Require Email only to show latest 10 board of this email.
