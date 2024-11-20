@@ -7,10 +7,7 @@ class Admin::MineBoardsController < ApplicationController
   end
 
   def new
-    @mine_board = MineBoard.new(params[:p].to_unsafe_h || {})
-    @mine_board.generate_board
-    
-    @board_detail = @mine_board.full_board
+    redirect_to admin_menu_path
   end
 
   def create
