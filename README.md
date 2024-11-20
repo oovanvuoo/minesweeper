@@ -10,7 +10,7 @@ ruby -v
 ```ruby 2.7.8p225```
 
 * System dependencies
-bundle install
+** bundle install
 
 * Deployment instructions
 sh dev.deploy.sh
