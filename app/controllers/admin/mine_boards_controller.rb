@@ -14,15 +14,17 @@ class Admin::MineBoardsController < ApplicationController
   end
 
   def create
-    @mine_board = MineBoard.new(mine_board_params)
-
+    # @mine_board ||= MineBoard.new(mine_board_params)
     if params[:commit] == 'Save'
-      if mine_board.save
-        redirect_to admin_mine_boards_path, notice: 'Mine board was successfully created.'
+      if @mine_board.save
+
+        return redirect_to admin_mine_boards_path, notice: 'Mine board was successfully created.'
       else
-        redirect_to new_admin_mine_board_path(p: mine_board_params)
+        return redirect_to new_admin_mine_board_path(p: mine_board_params)
       end 
     end
+  rescue => e
+    return redirect_to admin_mine_boards_path
   end
 
   def show
@@ -43,24 +45,31 @@ class Admin::MineBoardsController < ApplicationController
     if (params[:commit] == 'Generate')
       @mine_board = MineBoard.new(mine_board_params)
       @mine_board.generate_board
+      @mine_board.save
       @board_matrix = @mine_board.full_board
       @show_data = params[:commit]
+      respond_as_js
     elsif (params[:commit] == 'Show')
-      @mine_boards = MineBoardQuery.new.filters({email: mine_board_params[:email], page: 0, limit: 10})
+      _, @mine_boards = pagy(MineBoardQuery.new.filters({email: mine_board_params[:email]}), page: 1, items: 10)
       @show_data = params[:commit]
+      respond_as_js
+    elsif (params[:commit] == 'Save')
+      create
     else
       @mine_board = MineBoard.new
       @show_data = nil
+      respond_as_js
     end
 
-    # render :menu
+    
+  end 
 
-
+  def respond_as_js
     respond_to do |format|
       format.html
       format.js
     end
-  end 
+  end
 
   private
   def mine_board_params 
@@ -69,5 +78,6 @@ class Admin::MineBoardsController < ApplicationController
 
   def set_mine_board
     @mine_board = MineBoardQuery.new.get_by_id(params[:id])
+    @board_matrix = @mine_board.full_board
   end
 end

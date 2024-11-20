@@ -3,4 +3,5 @@
   $("#view-all").html("<%= j link_to('View all', admin_mine_boards_path) %>");
 <% elsif @show_data == 'Generate' %>
   $("#content").html("<%= j render('board_detail_matrix',  board_matrix: @board_matrix) %>");
+   $("#view-all").html(null);
 <% end %>

@@ -1,6 +1,6 @@
 class MineBoardQuery
   def initialize
-    @boards = MineBoard.all
+    @boards = MineBoard.all.order(id: :DESC)
   end
 
   def filters(params = {})

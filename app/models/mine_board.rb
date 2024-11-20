@@ -1,6 +1,6 @@
 class MineBoard < ApplicationRecord
   has_many :mine_board_details, -> { where('x IS NOT NULL AND y IS NOT NULL')}
-
+  accepts_nested_attributes_for :mine_board_details
 
   def generate_board #width, height, mine_number
     width = self.width.to_i
