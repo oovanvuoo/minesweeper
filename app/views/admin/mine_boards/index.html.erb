@@ -1,0 +1,18 @@
+<div class="card box-solid p-3">
+  <div class="card-body table-responsive p-0">
+    <%= form_tag(admin_mine_boards_path, method: :get, class: 'form-inline') do %>
+    <%= text_field_tag :keyword, params[:keyword], placeholder: 'Email', class: 'form-control mr-2 mb-2' %>
+    <%= text_field_tag :width, params[:width], placeholder: 'Width', class: 'form-control mr-2 mb-2' %>
+    <%= text_field_tag :height, params[:height], placeholder: 'Height', class: 'form-control mr-2 mb-2' %>
+    <%= submit_tag "Search", class: "btn btn-md btn-primary mr-2  mb-2" %>
+    <%= link_to 'Reset', admin_mine_boards_path, class: "btn btn-md btn-info mb-2 mr-2" %>
+    <% end %>
+
+    <div class="row">
+      <div class="col-1 justify-content-end">
+      </div>
+    </div>
+
+    <%= render 'list_board', mine_boards: @mine_boards%>
+  </div>
+</div>

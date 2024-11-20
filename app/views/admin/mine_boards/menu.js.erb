@@ -1,0 +1,5 @@
+<% if @show_data == 'Show' %>
+  $("#content").html("<%= j render('list_board', mine_boards: @mine_boards) %>");
+<% elsif @show_data == 'Generate' %>
+  $("#content").html("<%= j render('board_detail_matrix', board_matrix: @board_matrix) %>");
+<% end %>

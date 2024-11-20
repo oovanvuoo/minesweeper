@@ -64,3 +64,5 @@ gem "mysql2", "~> 0.5.6"
 
 gem "timeout", "~> 0.4.2"
 gem "paranoia", "~> 3.0"
+
+gem "byebug", "~> 11.1"
