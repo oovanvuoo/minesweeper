@@ -2,7 +2,7 @@ class Admin::MineBoardsController < ApplicationController
   before_action :set_mine_board, only: [:show, :destroy]
   def index
     @mine_boards = MineBoardQuery.new.filters(params)
-    # @pagy, @mine_board = pagy(@mine_boards)
+    @pagy, @mine_board = pagy(@mine_boards)
    
   end
 
@@ -36,12 +36,14 @@ class Admin::MineBoardsController < ApplicationController
 
   def destroy
     @mine_board.destroy!
+    redirect_to admin_mine_boards_path
   end
 
   def menu
     if (params[:commit] == 'Generate')
       @mine_board = MineBoard.new(mine_board_params)
-      @board_matrix = @mine_board&.full_board
+      @mine_board.generate_board
+      @board_matrix = @mine_board.full_board
       @show_data = params[:commit]
     elsif (params[:commit] == 'Show')
       @mine_boards = MineBoardQuery.new.filters({email: mine_board_params[:email], page: 0, limit: 10})

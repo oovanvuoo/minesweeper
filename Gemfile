@@ -66,3 +66,5 @@ gem "timeout", "~> 0.4.2"
 gem "paranoia", "~> 3.0"
 
 gem "byebug", "~> 11.1"
+
+gem "pagy", "~> 6.5"

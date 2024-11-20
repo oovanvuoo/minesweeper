@@ -1,5 +1,6 @@
 <% if @show_data == 'Show' %>
   $("#content").html("<%= j render('list_board', mine_boards: @mine_boards) %>");
+  $("#view-all").html("<%= j link_to('View all', admin_mine_boards_path) %>");
 <% elsif @show_data == 'Generate' %>
-  $("#content").html("<%= j render('board_detail_matrix', board_matrix: @board_matrix) %>");
+  $("#content").html("<%= j render('board_detail_matrix',  board_matrix: @board_matrix) %>");
 <% end %>
